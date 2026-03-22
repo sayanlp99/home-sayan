@@ -199,3 +199,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && notify-send -h strin
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Volume Up"
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Volume Down"
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low "Mute Toggled"
+
+# Force file pickers/dialogs to float and stay centered
+for_window [window_role="GtkFileChooserDialog"] floating enable, resize set 800 600, move position center
+for_window [window_type="dialog"] floating enable, resize set 800 600, move position center
